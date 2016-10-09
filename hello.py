@@ -1,14 +1,21 @@
+#!/usr/bin/python
+'''
+This script welcomes the user if there is no name given. 
+If no name, welcomes the whole world.
+'''
 import sys
 
-def main():
-    
+def read_name():
+    name = ''
     if len(sys.argv) >= 2:
-        name = sys.argv[1]
-    
+        for arg in sys.argv[1:]:
+            name = '' + arg
     else:
         name = 'World'
+    return name
 
-    print('Hello ' + name + '!')
+def print_hello(given_name):
+    print('Hello ' + given_name + '!')
 
-if __name__ == '__main__':
-    main()
+name = read_name()
+print_hello(name)
