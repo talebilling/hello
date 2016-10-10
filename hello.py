@@ -6,10 +6,8 @@ If no name, welcomes the whole world.
 import sys
 
 def read_name():
-    name = ''
     if len(sys.argv) >= 2:
-        for arg in sys.argv[1:]:
-            name = '' + arg
+        name = ' '.join(sys.argv[1:])
     else:
         name = 'World'
     return name
